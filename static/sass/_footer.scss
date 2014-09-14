@@ -1,9 +1,13 @@
 #site-footer {
+  margin-top:-78px;
   border-top: 1px solid $navbar-default-border;
+  border-bottom: 1px solid $navbar-default-border;
   padding: 2em 0 2em 0;
   width: 100%;
   background-color: $navbar-default-bg;
   font-size: $font-size-small;
+  height:78px;
+
   ul {
     padding:0;
   }
@@ -15,13 +19,13 @@
   }
 }
 
-#footer-social {
-  float:right;
-  padding:0px;
-}
-
 #footer-info {
   margin:0px;
   padding: 0px;
   display:inline;
+}
+
+.wrapper {
+  min-height:100%;
+  padding-bottom: 78px;
 }
