@@ -30,6 +30,8 @@ $("#cover-page, .article-cover").ready(function() {
 
 $(document).ready(function() {
 
+  $(window).stellar();
+
   if ($("#TableOfContents").length != 0) {
     $("#TableOfContents").affix({
       offset: {
@@ -38,8 +40,12 @@ $(document).ready(function() {
     });
   }
 
-  $(window).stellar();
-  $('.article-gallery img').on('click',function(){
+  if ($(".img-modal").length != 0) {
+    $("body").append('<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-body"></div></div></div></div>');
+  }
+
+  $('.img-modal').on('click',function(){
+    console.log(this);
     var src = $(this).attr('src');
     var img = '<img src="' + src + '" class="img-responsive" style="width:100%"/>';
     $('#myModal').modal();

@@ -16,7 +16,11 @@
   <div class="container article-gallery">
      <ul>
        {{ range .Params.gallery }}
-         <li class="col-sm-4"><img class="img-thumbnail" src="{{ . }}"></img></li>
+         <li class="col-sm-4">
+           <a href="#" class="thumbnail img-modal">
+             <img class="img-modal" src="{{ . }}"></img>
+           </a>
+          </li>
        {{ end }}
      </ul>
   </div>
@@ -30,12 +34,4 @@
     </address>
   </footer>
 </article>
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-body">
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
 {{ partial "footer.html" . }}
