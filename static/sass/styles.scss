@@ -1,0 +1,31 @@
+@import "compass";
+@import "_bootstrap-variables";
+@import "_bootstrap";
+@import "_footer";
+@import "_cover-page";
+@import "_article";
+@import "_navbar";
+@import "_leadsheet";
+@import "_tableofcontents";
+
+ol,ul {
+  padding-left:1.5em;
+}
+
+html {
+  position: relative;
+  height:100%;
+  font-weight:300;
+}
+
+body {
+  height:100%;
+}
+
+.container {
+    max-width:920px;
+}
+
+pre code {
+  font-size: $font-size-small;
+}

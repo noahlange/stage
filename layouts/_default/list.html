@@ -1,0 +1,18 @@
+{{ partial "head.html" . }}
+{{ partial "navbar.html" . }}
+
+<article>
+  <div class="container">
+    <header>
+        <h1 class="title">{{ .Title }}</h1>
+        <hr />
+    </header>
+  </div>
+  <div class="container">
+    {{ range .Data.Pages.ByDate.Reverse }}
+      {{ .Render "summary" }}
+  	{{ end }}
+  </div>
+</article>
+
+{{ template "theme/partials/footer.html" . }}

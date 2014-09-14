@@ -1,0 +1,41 @@
+{{ partial "head.html" . }}
+{{ partial "navbar.html" . }}
+{{ with .Params.coverimage }}<div class="article-cover" data-stellar-background-ratio="0.25" style="background-image: url({{ . }})"></div>{{ end }}
+<article id="main-container" >
+  <header class="container article-header">
+      <h1 class="title">{{ .Title }}</h1>
+      {{ with .Description }}<h4 class="text-muted subtitle">{{ . }}</h4>{{ end }}
+      <hr />
+  </header>
+  {{ with .Content }}
+  <section class="container article-content">
+    {{ . }}
+    <hr />
+  </section>
+  {{ end }}
+  <div class="container article-gallery">
+     <ul>
+       {{ range .Params.gallery }}
+         <li class="col-sm-4"><img class="img-thumbnail" src="{{ . }}"></img></li>
+       {{ end }}
+     </ul>
+  </div>
+  <footer class="container article-footer">
+    <hr />
+    {{ with .Params.author.image }}<img class="avatar" src="{{ . }}">{{ end }}
+    <address class="content">
+        <p><strong><a rel="author" href="{{ .Params.author.link }}" title="{{ .Params.author.name }}" target="_blank">{{ .Params.author.name }}</a></strong><br>
+        <span class="muted">{{ .Params.author.bio }}</span>
+        </p>
+    </address>
+  </footer>
+</article>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-body">
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+{{ partial "footer.html" . }}

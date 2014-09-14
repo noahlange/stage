@@ -1,0 +1,27 @@
+#site-footer {
+  border-top: 1px solid $navbar-default-border;
+  padding: 2em 0 2em 0;
+  width: 100%;
+  background-color: $navbar-default-bg;
+  font-size: $font-size-small;
+  ul {
+    padding:0;
+  }
+
+  li {
+    list-style:none;
+    display:inline;
+    padding-left: 1.5em;
+  }
+}
+
+#footer-social {
+  float:right;
+  padding:0px;
+}
+
+#footer-info {
+  margin:0px;
+  padding: 0px;
+  display:inline;
+}

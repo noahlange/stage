@@ -1,0 +1,37 @@
+{{ partial "head.html" . }}
+{{ partial "navbar.html" . }}
+{{ with .Params.coverimage }}<div class="article-cover" data-stellar-background-ratio="0.25" style="background-image: url({{ . }})"></div>{{ end }}
+<article id="main-container" >
+  <header class="container article-header">
+      <h1 class="title">{{ .Title }}</h1>
+      {{ with .Description }}<h4 class="subtitle">{{ . }}</h4>{{ end }}
+      <hr />
+  </header>
+  <section class="container article-content">
+    <div class="article-sidebar col-sm-4">
+        <ul class="sidebar-info">
+          {{ with .Params.album.image }}<li><img class="album-image" src="{{ . }}"></img></li>{{ end }}
+          <li class="text-muted">by <a href="{{ .Site.Params.artist.link }}">{{ .Site.Params.artist.name }}</a></li>
+          <li class="text-muted"><time pubdate datetime="{{ .Date.Format "2006-01-02" }}" title="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time></li>
+        </ul>
+        <ul class="sidebar-purchase">
+          {{ with .Params.purchase.itunes }}<li><a href="{{ . }}"><i class="fa fa-apple"></i></a></li>{{ end }}
+          {{ with .Params.purchase.google }}<li><a href="{{ . }}"><i class="fa fa-google"></i></a></li>{{ end }}
+          {{ with .Params.purchase.amazon }}<li><a href="{{ . }}">a</a></li>{{ end }}
+        </ul>
+    </div>
+    <div class="col-sm-8">
+        {{ .Content }}
+    </div>
+  </section>
+  <footer class="container article-footer">
+    <hr />
+    {{ with .Site.Params.artist.image }}<img class="avatar" src="{{ . }}">{{ end }}
+    <address class="content">
+        <p><strong><a rel="author" href="{{ .Site.Params.artist.link }}" title="{{ .Site.Params.artist.name }}" target="_blank">{{ .Site.Params.artist.name }}</a></strong><br>
+        <span class="muted">{{ .Site.Params.artist.description }}</span>
+        </p>
+    </address>
+  </footer>
+</article>
+{{ partial "footer.html" . }}

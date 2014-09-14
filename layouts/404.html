@@ -1,0 +1,12 @@
+{{ partial "head.html" . }}
+<article class="container">
+  <header><h1>404</h1></header>
+  <section>
+    <p>Page not found! Recent articles are below or search the <a href="{{ .Site.Params.navbar.blog }}">archives</a>.</p>
+  </section>
+  <hr>
+  {{ range first 10 .Data.Pages }}
+    {{ .Render "summary" }}
+  {{ end }}
+</article>
+{{ partial "footer.html" . }}

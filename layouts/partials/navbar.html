@@ -1,0 +1,29 @@
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{{ .Site.BaseUrl }}">{{ .Site.Params.title }}</a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        {{ with .Site.Params.navbar.blog }}<li><a href="{{ . }}">Blog</a></li>{{ end }}
+        {{ with .Site.Params.navbar.bio }}<li><a href="{{ . }}">Bio</a></li>{{ end }}
+        {{ with .Site.Params.navbar.music }}<li><a href="{{ . }}">Music</a></li>{{ end }}
+        {{ with .Site.Params.navbar.media }}<li><a href="{{ . }}">Media</a></li>{{ end }}
+        {{ with .Site.Params.navbar.events }}<li><a href="{{ . }}">Events</a></li>{{ end }}
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        {{ with .Site.Params.artist.facebook }}<li><a href="{{ . }}"><i class="fa fa-facebook"></i></a></li>{{ end }}
+        {{ with .Site.Params.artist.twitter }}<li><a href="{{ . }}"><i class="fa fa-twitter"></i></a></li>{{ end }}
+        {{ with .Site.Params.artist.soundcloud }}<li><a href="{{ . }}"><i class="fa fa-soundcloud"></i></a></li>{{ end }}
+        {{ with .Site.Params.artist.reverbnation }}<li><a href="{{ . }}"><i class="fa fa-star"></i></a></li>{{ end }}
+        {{ with .Site.Params.artist.contact }}<li><a href=""><i class="fa fa-envelope"></i></a></li>{{ end }}
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</div>

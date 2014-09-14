@@ -1,0 +1,12 @@
+    <section class="summary">
+        {{ with .Params.album.image }}<img src="{{ . }}" class="avatar">{{ end }}
+        <div class="content">
+            <h4 class="title"><a href="{{ .RelPermalink }}" rel="prefetch">{{ .Title }}</a></h4>
+            {{ if isset .Params "excerpt" }}
+            <p>{{ .Params.excerpt }}</p>
+            {{ else }}
+            <p>{{ .Summary }}</p>
+            {{ end }}
+        </div>
+        <hr>
+    </section>

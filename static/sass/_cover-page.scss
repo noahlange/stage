@@ -1,0 +1,26 @@
+#cover-page {
+  display:table;
+  height:100%;
+  width:100%;
+  background-size:cover;
+  background-position: 0px 0px;
+  background-attachment: fixed;
+  color:#fff;
+  div {
+    display:table-cell;
+    vertical-align:middle;
+    text-align:center;
+  }
+}
+
+.cover-title {
+  text-transform:uppercase;
+  font-weight:300;
+  font-size:128px;
+  margin-bottom:0;
+}
+
+.cover-subtitle {
+  font-weight: 300;
+  margin-top:0;
+}

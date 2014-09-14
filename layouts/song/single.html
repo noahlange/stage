@@ -1,0 +1,77 @@
+{{ partial "head.html" . }}
+{{ partial "navbar.html" . }}
+{{ with .Params.coverimage }}<div class="article-cover" data-stellar-background-ratio="0.25" style="background-image: url({{ . }})"></div>{{ end }}
+<article id="main-container" >
+  <header class="container article-header">
+      <h1 class="title">{{ .Title }}</h1>
+      <hr />
+  </header>
+  <section class="container article-content">
+    <div class="article-sidebar col-sm-4">
+        <ul class="sidebar-info">
+          {{ with .Params.album.image }}
+          <li>
+            <img class="album-image" src="{{ . }}"></img>
+          </li>
+          {{ end }}
+          <li class="text-muted">from <a href="{{ .Params.album.link }}">{{ .Params.album.title }}</a></li>
+          <li class="text-muted">by <a href="{{ .Params.artist.link }}">{{ .Site.Params.artist.name }}</a></li>
+        </ul>
+        <ul class="sidebar-purchase">
+          <li>
+            <div id="audio-player">
+              <div id="jquery_jplayer_1" class="jp-jplayer"></div>
+              <div id="jp_container_1" class="jp-audio-stream">
+                <div class="jp-type-single">
+                  <div class="jp-gui jp-interface">
+                    <ul class="jp-controls">
+                      <li><a href="javascript:;" class="jp-play" tabindex="1"><i class="fa fa-play"></i></a></li>
+                      <li><a href="javascript:;" class="jp-pause" tabindex="1"><i class="fa fa-pause"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          {{ with .Params.purchase.itunes }}<li><a href="{{ . }}"><i class="fa fa-apple"></i></a></li>{{ end }}
+          {{ with .Params.purchase.google }}<li><a href="{{ . }}"><i class="fa fa-google"></i></a></li>{{ end }}
+          {{ with .Params.purchase.amazon }}<li><a href="{{ . }}">a</a></li>{{ end }}
+        </ul>
+    </div>
+
+    <div class="col-sm-8">
+        {{ .Content }}
+    </div>
+
+  </section>
+
+  <footer class="container article-footer">
+    <hr />
+    {{ with .Site.Params.artist.image }}<img class="avatar" src="{{ . }}">{{ end }}
+    <address class="content">
+        <p><strong><a rel="author" href="{{ .Site.Params.artist.link }}" title="{{ .Site.Params.artist.name }}" target="_blank">{{ .Site.Params.artist.name }}</a></strong><br>
+        <span class="muted">{{ .Site.Params.artist.description }}</span>
+        </p>
+    </address>
+  </footer>
+</article>
+<script>
+  $(document).ready(function(){
+    $( "#jquery_jplayer_1" ).jPlayer({
+      ready: function (event) {
+        $(this).jPlayer("setMedia", {
+          title: "{{ .Title }}",
+          m4a: "{{ .Params.song.m4a }}",
+        });
+      },
+      swfPath: "js",
+      supplied: "m4a",
+      wmode: "window",
+      smoothPlayBar: true,
+      keyEnabled: true,
+      remainingDuration: true,
+      toggleDuration: true
+    });
+  });
+</script>
+{{ partial "footer.html" . }}
