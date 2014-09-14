@@ -1,4 +1,5 @@
-stage
+
+restage
 =====
 
 Stage provides a comprehensive theme for musicians and other creative types. Built off the [SASS](http://sass-lang.com/) port of the [Twitter Bootstrap](http://getbootstrap.com/) framework, Stage features great typography, a responsive design, comprehensive options for social media, navbar links, author information and more.
@@ -21,7 +22,9 @@ Stage comes pre-packaged with a number of content types:
 
 Stage features a full-page cover photo for the index and the option for large photos on node pages. With some help from [waypoint.js](http://imakewebthings.com/jquery-waypoints/), Stage features  transparency effects for the navbar when transitioning between cover photos and regular content. There's also some [stellar.js](http://markdalgleish.com/projects/stellar.js/) for extra parallax effects.
 
-The media data type allows for the creation of image galleries, dictated as an array in the front matter and rendered as a responsive grid. Clicking images summons a Bootstrap modal with the image.
+The media data type allows for the creation of image galleries, dictated as an array in the front matter and rendered as a responsive grid.
+
+Clicking images created with the 'imagemodal' shortcode summons a Bootstrap modal with the image.
 
 ## Bootstrap & SASS
 
@@ -34,6 +37,10 @@ Tables of Contents, when displayed via the "toc : 'true'" / "toc: true" flag in 
 By default, Stage ships with Font Awesome, as well as the Lato typeface at weights 300, 500 and 700.
 
 Somewhat less ubiquitous than Helvetica Neue, Lato is a superb typeface that's entirely at home in both casual and professional situations. If that's not to your liking, typefaces can be replaced with the fonts parameter in the config.yaml file, or added after a "|" character.
+
+# Shortcodes
+
+Stage comes prepackaged with a handful of shortcodes that simplify media-type things. Apart from spf13's Vimeo and YouTube shortcodes, Stage features a custom imagemodal shortcode that creates thumbnail images that appear in modals when clicked.
 
 # Libraries & APIs
 
@@ -128,8 +135,8 @@ Feel free to make pull requests with upgrades to Stage at [GitHub](http://github
 ## Markup and Styling
 * [SASS](http://sass-lang.com/)
 * [Compass](http://compass-style.org/)
-* [Twitter Bootstrap](http://getbootstrap.com/)
-
+* [Bootstrap](http://getbootstrap.com/)
+* [CSSStickyFooter](http://www.cssstickyfooter.com/)
 ## Leadsheets
 * [leadsheet.js](https://github.com/gilesdring/js-leadsheet)
 * [phpjs' strip_tags](https://github.com/kvz/phpjs)
