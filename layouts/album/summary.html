@@ -1,0 +1,22 @@
+    {{ $artist := .Params.artist }}
+    <section class="summary">
+        <img src="{{ .Params.album.image }}" class="avatar">
+        <div class="content">
+            <h4 class="title"><a href="{{ .RelPermalink }}" rel="prefetch">{{ .Title }}</a></h4>
+          {{ with .Description }}<h5 class="subtitle">{{ . }}</h5>{{ end }}
+          {{ if isset .Params "excerpt" }}
+            <p>{{ .Params.excerpt }}</p>
+          {{ else }}
+            <p>{{ .Summary }}</p>
+          {{ end }}
+          {{ range $element := .Site.Params.artists }}
+            {{ if eq $element.name $artist }}
+          <div class="meta">
+              Written By <a href="{{ $element.link }}"><address>{{ $element.name }}</address></a> &mdash;
+          {{ end }}
+        {{ end }}
+              <time pubdate datetime="{{ .Date.Format "2006-01-02" }}" title="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+          </div>
+        </div>
+        <hr />
+    </section>
