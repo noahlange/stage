@@ -1,24 +1,22 @@
 {{ partial "head.html" . }}
-
-<body>
-
 {{ partial "navbar.html" . }}
-
 {{ with .Site.Params.coverimage }}<div id="cover-page" data-stellar-background-ratio="0.25" style="background-image: url({{ . }})">{{ end }}
   <div class="container">
     {{ with .Site.Params.title }}<h1 class="cover-title">{{ . }}</h1>{{ end }}
     {{ with .Site.Params.subtitle }}<h3 class="cover-subtitle">{{ . }}</h3>{{ end }}
   </div>
 </div>
-
-<div id="main-container" class="container">
-  <div class="col-sm-12">
-    <article>
-      {{ range first 5 (where .Data.Pages "Section" "post") }}
-         {{ .Render "summary"}}
-      {{ end }}
-    </article>
+<div class="index-wrapper">
+  <div id="main-container" class="container">
+    <div class="col-sm-12">
+      <article>
+        <h3>Recent Posts</h3>
+        <hr />
+        {{ range first 5 (where .Data.Pages "Section" "post") }}
+           {{ .Render "summary"}}
+        {{ end }}
+      </article>
+    </div>
   </div>
 </div>
-
 {{ partial "footer.html" . }}

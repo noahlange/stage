@@ -8035,27 +8035,32 @@ button.close {
   font-size: 14px;
   height: 78px;
 }
-/* line 11, ../sass/_footer.scss */
+/* line 10, ../sass/_footer.scss */
 #site-footer ul {
   padding: 0;
 }
-/* line 15, ../sass/_footer.scss */
+/* line 14, ../sass/_footer.scss */
 #site-footer li {
   list-style: none;
   display: inline;
   padding-left: 1.5em;
 }
 
-/* line 22, ../sass/_footer.scss */
+/* line 21, ../sass/_footer.scss */
 #footer-info {
   margin: 0px;
   padding: 0px;
   display: inline;
 }
 
-/* line 28, ../sass/_footer.scss */
+/* line 27, ../sass/_footer.scss */
 .wrapper {
   min-height: 100%;
+  padding-bottom: 78px;
+}
+
+/* line 32, ../sass/_footer.scss */
+.index-wrapper {
   padding-bottom: 78px;
 }
 

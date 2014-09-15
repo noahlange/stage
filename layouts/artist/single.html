@@ -1,21 +1,23 @@
 {{ partial "head.html" . }}
 {{ partial "navbar.html" . }}
-{{ with .Params.coverimage }}<div class="article-cover" data-stellar-background-ratio="0.25" style="background-image: url({{ . }})"></div>{{ end }}
-<article id="main-container" >
-  <header class="container article-header">
-      <h1 class="title">{{ .Title }}</h1>
-      <h4 class="subtitle">{{ .Description }}</h4>
-      <hr />
-  </header>
-  <section class="container article-content">
-    {{ .Content }}
-  </section>
-  <section class="container">
-    <h3>Discography</h3>
-    <br />
-    {{ range where .Site.Recent.ByDate.Reverse "Section" "album" }}
-      {{ .Render "summary" }}
-    {{ end }}
-  </section>
-</article>
+<div class="wrapper">
+  {{ with .Params.coverimage }}<div class="article-cover" data-stellar-background-ratio="0.25" style="background-image: url({{ . }})"></div>{{ end }}
+  <article id="main-container" >
+    <header class="container article-header">
+        <h1 class="title">{{ .Title }}</h1>
+        <h4 class="subtitle">{{ .Description }}</h4>
+        <hr />
+    </header>
+    <section class="container article-content">
+      {{ .Content }}
+    </section>
+    <section class="container">
+      <h3>Discography</h3>
+      <br />
+      {{ range where .Site.Recent.ByDate.Reverse "Section" "album" }}
+        {{ .Render "summary" }}
+      {{ end }}
+    </section>
+  </article>
+</div>
 {{ partial "footer.html" . }}

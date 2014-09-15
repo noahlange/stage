@@ -7,7 +7,6 @@
   background-color: $navbar-default-bg;
   font-size: $font-size-small;
   height:78px;
-
   ul {
     padding:0;
   }
@@ -28,4 +27,8 @@
 .wrapper {
   min-height:100%;
   padding-bottom: 78px;
+}
+
+.index-wrapper {
+  padding-bottom:78px;
 }

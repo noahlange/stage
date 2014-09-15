@@ -1,40 +1,42 @@
 {{ partial "head.html" . }}
 {{ partial "navbar.html" . }}
-{{ with .Params.coverimage }}
-  <div class="article-cover" data-stellar-background-ratio="0.25" style="background-image: url({{ . }})"></div>
-{{ end }}
-<article id="main-container" >
-  <header class="container article-header">
-      <div class="meta">
-        By <address><a rel="author" href="{{ .Site.Params.artist.link }}" title="{{ .Site.Params.artist.name }}" target="_blank">{{ .Site.Params.artist.name }}</a></address> &mdash;
-        <time pubdate datetime="{{ .Date.Format "2006-01-02" }}" title="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 02, 2006" }}</time>
-      </div>
-      <h1 class="title">{{ .Title }}</h1>
-      {{ with .Description }}<h4 class="subtitle">{{ . }}</h4>{{ end }}
-      <hr />
-  </header>
-  {{ if or (eq .Params.toc "true") (eq .Params.toc true) }}
-  <section id="article-content" class="container article-content">
-    <div class="col-sm-9">
-      {{ .Content }}
-    </div>
-    <div id="article-toc" class="col-sm-3">
-      {{ .TableOfContents }}
-    </div>
-  </section>
-  {{ else }}
-  <section id="article-content" class="container article-content">
-    {{ .Content }}
-  </section>
+<div class="wrapper">
+  {{ with .Params.coverimage }}
+    <div class="article-cover" data-stellar-background-ratio="0.25" style="background-image: url({{ . }})"></div>
   {{ end }}
-  <footer class="container article-footer">
-    <hr />
-    {{ with .Site.Params.artist.image }}<img class="avatar" src="{{ . }}">{{ end }}
-    <address class="content">
-        <p><strong><a rel="author" href="{{ .Site.Params.artist.link }}" title="{{ .Site.Params.artist.name }}" target="_blank">{{ .Site.Params.artist.name }}</a></strong><br>
-        <span class="muted">{{ .Site.Params.artist.description }}</span>
-        </p>
-    </address>
-  </footer>
-</article>
+  <article id="main-container" >
+    <header class="container article-header">
+        <div class="meta">
+          By <address><a rel="author" href="{{ .Site.Params.artist.link }}" title="{{ .Site.Params.artist.name }}" target="_blank">{{ .Site.Params.artist.name }}</a></address> &mdash;
+          <time pubdate datetime="{{ .Date.Format "2006-01-02" }}" title="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 02, 2006" }}</time>
+        </div>
+        <h1 class="title">{{ .Title }}</h1>
+        {{ with .Description }}<h4 class="subtitle">{{ . }}</h4>{{ end }}
+        <hr />
+    </header>
+    {{ if or (eq .Params.toc "true") (eq .Params.toc true) }}
+    <section id="article-content" class="container article-content">
+      <div class="col-sm-9">
+        {{ .Content }}
+      </div>
+      <div id="article-toc" class="col-sm-3">
+        {{ .TableOfContents }}
+      </div>
+    </section>
+    {{ else }}
+    <section id="article-content" class="container article-content">
+      {{ .Content }}
+    </section>
+    {{ end }}
+    <footer class="container article-footer">
+      <hr />
+      {{ with .Site.Params.artist.image }}<img class="avatar" src="{{ . }}">{{ end }}
+      <address class="content">
+          <p><strong><a rel="author" href="{{ .Site.Params.artist.link }}" title="{{ .Site.Params.artist.name }}" target="_blank">{{ .Site.Params.artist.name }}</a></strong><br>
+          <span class="muted">{{ .Site.Params.artist.description }}</span>
+          </p>
+      </address>
+    </footer>
+  </article>
+</div>
 {{ partial "footer.html" . }}
