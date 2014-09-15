@@ -18,11 +18,11 @@
         {{ with .Site.Params.navbar.events }}<li><a href="{{ . }}">Events</a></li>{{ end }}
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        {{ with .Site.Params.artist.facebook }}<li><a href="{{ . }}"><i class="fa fa-facebook"></i></a></li>{{ end }}
-        {{ with .Site.Params.artist.twitter }}<li><a href="{{ . }}"><i class="fa fa-twitter"></i></a></li>{{ end }}
-        {{ with .Site.Params.artist.soundcloud }}<li><a href="{{ . }}"><i class="fa fa-soundcloud"></i></a></li>{{ end }}
-        {{ with .Site.Params.artist.reverbnation }}<li><a href="{{ . }}"><i class="fa fa-star"></i></a></li>{{ end }}
-        {{ with .Site.Params.artist.contact }}<li><a href=""><i class="fa fa-envelope"></i></a></li>{{ end }}
+        {{ with .Site.Params.social.facebook }}<li><a href="{{ . }}"><i class="fa fa-facebook"></i></a></li>{{ end }}
+        {{ with .Site.Params.social.twitter }}<li><a href="{{ . }}"><i class="fa fa-twitter"></i></a></li>{{ end }}
+        {{ with .Site.Params.social.soundcloud }}<li><a href="{{ . }}"><i class="fa fa-soundcloud"></i></a></li>{{ end }}
+        {{ with .Site.Params.social.reverbnation }}<li><a href="{{ . }}"><i class="fa fa-star"></i></a></li>{{ end }}
+        {{ with .Site.Params.social.contact }}<li><a href=""><i class="fa fa-envelope"></i></a></li>{{ end }}
       </ul>
     </div><!--/.nav-collapse -->
   </div>

@@ -10,4 +10,5 @@ event:
   time: "A time."
 excerpt: "An excerpt from the content text."
 description: "A description of the event."
+artist: Stage
 ---

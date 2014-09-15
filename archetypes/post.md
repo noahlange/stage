@@ -1,5 +1,6 @@
 ---
-title: Welcome to OffStage.
+title: Welcome to Stage.
 coverimage: "/images/stage.jpg"
-toc: true
+toc: false
+artist: Stage
 ---

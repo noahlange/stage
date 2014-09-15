@@ -1,27 +1,37 @@
 ---
-baseurl: ""
+baseurl: "/"
 theme: "stage"
 metaDataFormat: "yaml"
 params:
+
+  # Website information
   title: "Stage"
-  subtitle: "A Hugo theme for musicians and creatives."
+  subtitle: "A Hugo theme for musicians and creative types."
   coverimage: "/images/stage.jpg"
-  artist:
-    name: "Stage"
-    description: "Enter a description of the artist here."
-    image: "/images/avatar.png"
-    link: "/"
-    website: "/"
+
+  # Social information
+  social:
     facebook: "http://facebook.com/"
     soundcloud: "http://soundcloud.com/"
     reverbnation: "http://reverbnation.com/"
-    contact: "http://example.com"
+    contact: "/"
+
+  # Artist information
+  artists:
+    stage:
+      name: "Stage"
+      description: "Enter an artist description here."
+      image: "/images/avatar.png"
+      link: "/"
+
+  # Navbar links
   navbar:
     blog: "/post/"
     bio: "/"
-    music: "/"
-    media: "/"
-    events: "/"
+    music: "/album/"
+    events: "/event/"
+    media: "/media/"
+
   fonts: "Lato:300,500,700"
   maps: "true"
 ---

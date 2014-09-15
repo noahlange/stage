@@ -1,5 +1,6 @@
 {{ partial "head.html" . }}
 {{ partial "navbar.html" . }}
+{{ $artist := .Params.artist }}
 <div class="wrapper">
   {{ with .Params.coverimage }}<div class="article-cover" data-stellar-background-ratio="0.25" style="background-image: url({{ . }})"></div>{{ end }}
   <article id="main-container" >
@@ -12,7 +13,7 @@
       <div class="article-sidebar col-sm-4">
           <ul class="sidebar-info">
             {{ with .Params.album.image }}<li><img class="album-image" src="{{ . }}"></img></li>{{ end }}
-            <li class="text-muted">by <a href="{{ .Site.Params.artist.link }}">{{ .Site.Params.artist.name }}</a></li>
+            <li class="text-muted">by <a href="{{ .Site.Params.artist.link }}">{{ .Params.artist }}</a></li>
             <li class="text-muted"><time pubdate datetime="{{ .Date.Format "2006-01-02" }}" title="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time></li>
           </ul>
           <ul class="sidebar-purchase">
@@ -27,11 +28,15 @@
     </section>
     <footer class="container article-footer">
       <hr />
-      {{ with .Site.Params.artist.image }}<img class="avatar" src="{{ . }}">{{ end }}
-      <address class="content">
-          <p><strong><a rel="author" href="{{ .Site.Params.artist.link }}" title="{{ .Site.Params.artist.name }}" target="_blank">{{ .Site.Params.artist.name }}</a></strong><br>
-          <span class="muted">{{ .Site.Params.artist.description }}</span>
-          </p>
+        {{ range $element := .Site.Params.artists }}
+          {{ if eq $element.name $artist }}
+          <img class="avatar" src="{{ $element.image }}">
+          <address class="content">
+            <p><strong><a rel="author" href="{{ $element.link }}" title="{{ $element.name }}" target="_blank">{{ $element.name }}</a></strong><br>
+            <span class="muted">{{ $element.description }}</span>
+            </p>
+          {{ end }}
+        {{ end }}
       </address>
     </footer>
   </article>

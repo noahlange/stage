@@ -4,8 +4,6 @@ stage
 
 Stage provides a comprehensive theme for musicians and other creative types. Built off the [SASS](http://sass-lang.com/) port of the [Twitter Bootstrap](http://getbootstrap.com/) framework, Stage features great typography, a responsive design, comprehensive options for social media, navbar links, author information and more.
 
-Demo is [here](http://stage.noahlange.com/), if you're itching to check it out.
-
 While the Stage theme is heavily based off the excellent [Hugo Incorporated](https://github.com/nilproductions/hugo-incorporated) Hugo theme, in turns based off [Jekyll Incorporated](https://github.com/kippt/jekyll-incorporated), Stage has a few extra tricks up its sleeves.
 
 # Content
@@ -17,6 +15,14 @@ Stage comes pre-packaged with a number of content types:
 * Songs
 * Media (galleries of photos or videos)
 * Events
+
+## Multi-Artist Support
+
+It took a night of swearing at the computer, but Stage now has multi-author (or artist) support. It's not perfect, but it'll do for now. An array of artists can be configured in config.yaml, which can then be referenced by *name*, not array key, (i.e., artist.stage.$name, not artists.$key ) in the 'artist' Paramater in content front matter. (It can be safely omitted on 'Artist' pages, where it instead uses the page Title as the artist name.)
+
+Hugo then dynamically generates each post's meta information from that in config.yaml.
+
+This allows Stage to serve as a site for multiple artists, or even for a label. This functionality has yet to be ported over to OffStage, because I have to go to work and it was quite a bit of work to get it functioning correctly.
 
 # Presentation
 
@@ -88,26 +94,37 @@ baseurl: "/"
 theme: "stage"
 metaDataFormat: "yaml"
 params:
- title: "Stage"
- subtitle: "A Hugo theme for musicians and creatives."
- coverimage: "/images/stage.jpg"
- artist:
-   name: "Stage"
-   description: "Enter a description of the artist here."
-   image: "/images/avatar.png"
-   link: "/"
-   website: "/"
-   facebook: "http://facebook.com/"
-   soundcloud: "http://soundcloud.com/"
-   reverbnation: "http://reverbnation.com/"
-   contact: "http://example.com"
- navbar:
-   blog: "/post/"
-   bio: "/"
-   music: "/"
-   media: "/"
- fonts: "Lato:300,500,700"
- maps: true
+
+  # Website information
+  title: "Stage"
+  subtitle: "A Hugo theme for musicians and creative types."
+  coverimage: "/images/stage.jpg"
+
+  # Social information
+  social:
+    facebook: "http://facebook.com/"
+    soundcloud: "http://soundcloud.com/"
+    reverbnation: "http://reverbnation.com/"
+    contact: "/"
+
+  # Artist information
+  artists:
+    stage:
+      name: "Stage"
+      description: "Enter an artist description here."
+      image: "/images/avatar.png"
+      link: "/"
+
+  # Navbar links
+  navbar:
+    blog: "/post/"
+    bio: "/"
+    music: "/album/"
+    events: "/event/"
+    media: "/media/"
+
+  fonts: "Lato:300,500,700"
+  maps: "true"
 ---
 ```
 
