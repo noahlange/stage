@@ -4,7 +4,7 @@ stage
 
 Stage provides a comprehensive theme for musicians and other creative types. Built off the [SASS](http://sass-lang.com/) port of the [Twitter Bootstrap](http://getbootstrap.com/) framework, Stage features great typography, a responsive design, comprehensive options for social media, navbar links, author information and more.
 
-Demo is [here](http://stage.noahlange.com/)
+Demo is [here](http://stage.noahlange.com/), if you're itching to check it out.
 
 While the Stage theme is heavily based off the excellent [Hugo Incorporated](https://github.com/nilproductions/hugo-incorporated) Hugo theme, in turns based off [Jekyll Incorporated](https://github.com/kippt/jekyll-incorporated), Stage has a few extra tricks up its sleeves.
 
