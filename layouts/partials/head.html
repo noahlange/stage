@@ -11,8 +11,8 @@
   <script src="/js/waypoints.min.js" type="text/javascript"></script>
   <script src="/js/jquery.stellar.min.js" type="text/javascript"></script>
   <script src="/js/stage.js" type="text/javascript"></script>
-  {{ if eq .IsPage "false" }}
-    {{ if eq .Type "song" }}
+  {{ if (eq .IsPage true ) }}
+    {{ if (eq .Type "song") }}
     <script src="/js/jquery.leadsheet.js" type="text/javascript"></script>
     <script type="text/javascript">
       $(document).ready( function() {
