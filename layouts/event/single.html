@@ -1,6 +1,6 @@
 {{ partial "head.html" . }}
 {{ partial "navbar.html" . }}
-{{ $artist := .Params.artist }}
+{{ $author := .Params.author }}
 <div class="wrapper">
   {{ if or (eq .Site.Params.maps "true") (eq .Site.Params.maps true) }}
       <div class="article-map" data-stellar-background-ratio="0.25" data-stellar-vertical-offset="1200" style="background-image: url('http://maps.googleapis.com/maps/api/staticmap?center={{ .Params.map.lat }},{{ .Params.map.long }}&zoom={{ .Params.map.zoom }}&size=1680x400&scale=2')"></div>
@@ -38,8 +38,8 @@
     </section>
     <footer class="container article-footer">
       <hr />
-      {{ range $element := .Site.Params.artists }}
-        {{ if eq $element.name $artist }}
+      {{ range $element := .Site.Params.authors }}
+        {{ if eq $element.name $author }}
         <img class="avatar" src="{{ $element.image }}">
         <address class="content">
           <p><strong><a rel="author" href="{{ $element.link }}" title="{{ $element.name }}" target="_blank">{{ $element.name }}</a></strong><br>

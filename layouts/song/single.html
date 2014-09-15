@@ -1,5 +1,6 @@
 {{ partial "head.html" . }}
 {{ partial "navbar.html" . }}
+{{ $artist := .Params.artist }}
 <div class="wrapper">
   {{ with .Params.coverimage }}<div class="article-cover" data-stellar-background-ratio="0.25" style="background-image: url({{ . }})"></div>{{ end }}
   <article id="main-container" >
@@ -16,7 +17,11 @@
             </li>
             {{ end }}
             <li class="text-muted">from <a href="{{ .Params.album.link }}">{{ .Params.album.title }}</a></li>
-            <li class="text-muted">by <a href="{{ .Params.artist.link }}">{{ .Site.Params.artist.name }}</a></li>
+            {{ $element := .Site.Params.authors }}
+              {{ if eq $element.name $author }}
+            <li class="text-muted">by <a href="{{ $element.link }}">{{ $element.name }}</a></li>
+              {{ end }}
+            {{ end }}
           </ul>
           <ul class="sidebar-purchase">
             <li>
@@ -45,11 +50,15 @@
     </section>
     <footer class="container article-footer">
       <hr />
-      {{ with .Site.Params.artist.image }}<img class="avatar" src="{{ . }}">{{ end }}
-      <address class="content">
-          <p><strong><a rel="author" href="{{ .Site.Params.artist.link }}" title="{{ .Site.Params.artist.name }}" target="_blank">{{ .Site.Params.artist.name }}</a></strong><br>
-          <span class="muted">{{ .Site.Params.artist.description }}</span>
-          </p>
+        {{ range $element := .Site.Params.authors }}
+          {{ if eq $element.name $author }}
+          <img class="avatar" src="{{ $element.image }}">
+          <address class="content">
+            <p><strong><a rel="author" href="{{ $element.link }}" title="{{ $element.name }}" target="_blank">{{ $element.name }}</a></strong><br>
+            <span class="muted">{{ $element.description }}</span>
+            </p>
+          {{ end }}
+        {{ end }}
       </address>
     </footer>
   </article>

@@ -1,4 +1,4 @@
-    {{ $artist := .Params.artist }}
+    {{ $author := .Params.author }}
     <section class="summary">
         <img src="{{ .Params.album.image }}" class="avatar">
         <div class="content">
@@ -9,8 +9,8 @@
           {{ else }}
             <p>{{ .Summary }}</p>
           {{ end }}
-          {{ range $element := .Site.Params.artists }}
-            {{ if eq $element.name $artist }}
+          {{ range $element := .Site.Params.authors }}
+            {{ if eq $element.name $author }}
           <div class="meta">
               Written By <a href="{{ $element.link }}"><address>{{ $element.name }}</address></a> &mdash;
           {{ end }}

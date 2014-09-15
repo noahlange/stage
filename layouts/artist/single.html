@@ -1,6 +1,6 @@
 {{ partial "head.html" . }}
 {{ partial "navbar.html" . }}
-{{ $artist := .Title }}
+{{ $author := .Title }}
 <div class="wrapper">
   {{ with .Params.coverimage }}<div class="article-cover" data-stellar-background-ratio="0.25" style="background-image: url({{ . }})"></div>{{ end }}
   <article id="main-container" >
@@ -16,7 +16,7 @@
       <h3>Discography</h3>
       <br />
       {{ range where .Site.Recent.ByDate.Reverse "Section" "album" }}
-        {{ if eq .Params.artist $artist }}
+        {{ if eq .Params.author $author }}
           {{ .Render "summary" }}
         {{ end }}
       {{ end }}
