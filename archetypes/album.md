@@ -1,6 +1,5 @@
 ---
 album:
-  title: "Album name"
   link: "http://example.com"
   image: "/images/stage-small.jpg"
 purchase:

@@ -38,7 +38,36 @@ $(document).ready(function() {
         top: $("#TableOfContents").offset().top - 60
       }
     });
-  }
+  };
+
+  if ($(".jp-jplayer").length != 0) {
+    $(".jp-jplayer").each( function() {
+
+      var parent = $(this).parent();
+      var id = parent.attr('id');
+      var datasrc = parent.attr('data-src');
+      var title = parent.attr('title');
+      var selector = "#jquery_jplayer_"+id;
+
+      $( selector ).jPlayer({
+        ready: function (event) {
+          console.log("???")
+          $(this).jPlayer("setMedia", {
+            title: title,
+            m4a: datasrc,
+          });
+        },
+        supplied: "m4a",
+        wmode: "window",
+        smoothPlayBar: true,
+        keyEnabled: true,
+        remainingDuration: false,
+        toggleDuration: false,
+        cssSelectorAncestor: '#jp_container_'+id
+      });
+
+    });
+  };
 
   if ($(".img-modal").length != 0) {
     $("body").append('<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-body"></div></div></div></div>');

@@ -19,7 +19,7 @@
         </ul>
         <ul class="sidebar-purchase">
           <li>
-            <div id="audio-player">
+            <div id="1" class="song-player" data-src="{{ .Params.song.m4a }}" title="{{ .Title }}">
               <div id="jquery_jplayer_1" class="jp-jplayer"></div>
               <div id="jp_container_1" class="jp-audio-stream">
                 <div class="jp-type-single">
@@ -38,13 +38,10 @@
           {{ with .Params.purchase.amazon }}<li><a href="{{ . }}">a</a></li>{{ end }}
         </ul>
     </div>
-
     <div class="col-sm-8">
         {{ .Content }}
     </div>
-
   </section>
-
   <footer class="container article-footer">
     <hr />
     {{ with .Site.Params.artist.image }}<img class="avatar" src="{{ . }}">{{ end }}
@@ -55,23 +52,4 @@
     </address>
   </footer>
 </article>
-<script>
-  $(document).ready(function(){
-    $( "#jquery_jplayer_1" ).jPlayer({
-      ready: function (event) {
-        $(this).jPlayer("setMedia", {
-          title: "{{ .Title }}",
-          m4a: "{{ .Params.song.m4a }}",
-        });
-      },
-      swfPath: "js",
-      supplied: "m4a",
-      wmode: "window",
-      smoothPlayBar: true,
-      keyEnabled: true,
-      remainingDuration: true,
-      toggleDuration: true
-    });
-  });
-</script>
 {{ partial "footer.html" . }}

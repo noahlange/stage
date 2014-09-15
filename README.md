@@ -40,7 +40,7 @@ Somewhat less ubiquitous than Helvetica Neue, Lato is a superb typeface that's e
 
 # Shortcodes
 
-Stage comes prepackaged with a handful of shortcodes that simplify media-type things. Apart from spf13's Vimeo and YouTube shortcodes, Stage features a custom imagemodal shortcode that creates thumbnail images that appear in modals when clicked.
+Stage comes prepackaged with a handful of shortcodes that simplify media-type things. Apart from spf13's Vimeo and YouTube shortcodes, Stage features a custom imagemodal shortcode that creates thumbnail images that appear in modals when clicked, as well as an audio player shortcode that embeds an instance of the jPlayer audio player into the page.
 
 # Libraries & APIs
 
@@ -68,7 +68,9 @@ And the bartender, he gets the [F]glass and [G]we begin to [C]talk
 
 ## jPlayer
 
-The latest version of the jQuery plugin jPlayer is also included. All songs with linked audio files in their front matter have an integrated audio player on the purchase bar.
+The latest version of the jQuery plugin jPlayer is also included
+
+All songs with linked audio files in their front matter have an integrated audio player on the purchase bar, and the {{% audio %}} shortcode allows users to embed audio files directly into their markdown.
 
 # Configuration
 

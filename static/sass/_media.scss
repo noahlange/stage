@@ -1,3 +1,31 @@
 .img-modal:hover {
     cursor:pointer;
 }
+
+.jp-details > ul, .jp-controls li {
+  display:inline;
+  list-style:none;
+  padding:0;
+}
+
+.jp-controls, .jp-gui {
+  display:inline;
+  padding:0;
+  margin:0;
+}
+
+.jp-details ul li, .jp-details {
+  display:inline;
+}
+
+.jp-type-single, .jp-audio-stream {
+  display:inline;
+}
+
+.song-player {
+  display:inline;
+}
+
+.jp-details {
+  padding-right:1em;
+}

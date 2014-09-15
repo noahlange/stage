@@ -1,0 +1,20 @@
+<div id="{{ .Get "id" }}" data-src="{{ .Get "src" }}" title="{{ .Get "title" }}">
+  <div id="jquery_jplayer_{{ .Get "id" }}" class="jp-jplayer"></div>
+  <div id="jp_container_{{ .Get "id" }}" class="jp-audio-stream">
+    <div class="jp-type-single">
+      <div class="jp-details">
+        <ul>
+          <li><a href="{{ .Get "href" }}">{{ .Get "title" }}</a></li>
+          <li>-</li>
+          <li><span class="jp-duration text-muted"></span></li>
+        </ul>
+      </div>
+      <div class="jp-gui jp-interface">
+        <ul class="jp-controls">
+          <li><a href="javascript:;" class="jp-play" tabindex="1"><i class="fa fa-play"></i></a></li>
+          <li><a href="javascript:;" class="jp-pause" tabindex="1"><i class="fa fa-pause"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
