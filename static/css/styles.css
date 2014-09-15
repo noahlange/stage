@@ -8391,6 +8391,15 @@ article {
 }
 
 /* line 29, ../sass/_media.scss */
+.shortcode-player {
+  padding-bottom: .75em;
+}
+/* line 31, ../sass/_media.scss */
+.shortcode-player .jp-gui {
+  float: right;
+}
+
+/* line 36, ../sass/_media.scss */
 .jp-details {
   padding-right: 1em;
 }

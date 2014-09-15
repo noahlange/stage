@@ -1,6 +1,6 @@
 {{ partial "head.html" . }}
 {{ partial "navbar.html" . }}
-<div class="cover">
+<div class="wrapper">
   {{ with .Params.coverimage }}<div class="article-cover" data-stellar-background-ratio="0.25" style="background-image: url({{ . }})"></div>{{ end }}
   <article id="main-container" >
     <header class="container article-header">
