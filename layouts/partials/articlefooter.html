@@ -1,0 +1,15 @@
+{{ $author := .Params.author }}
+{{ range $element := .Site.Params.authors }}
+  {{ if eq $element.name $author }}
+  <footer class="container article-footer">
+    <hr />
+    <div class="col-sm-12">
+      <img class="avatar" src="{{ $element.image }}">
+      <address class="content">
+        <p><strong><a rel="author" href="{{ $element.link }}" title="{{ $element.name }}" target="_blank">{{ $element.name }}</a></strong></p>
+        <p class="muted">{{ $element.description }}</p>
+      </address>
+    </div>
+  </footer>
+  {{ end }}
+{{ end }}

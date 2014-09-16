@@ -1,0 +1,16 @@
+{{ $author := .Params.author }}
+<header class="container article-header">
+  <div class="col-sm-12">
+    <div class="meta">
+{{ range $element := .Site.Params.authors }}
+  {{ if eq $element.name $author }}
+      By <address><a rel="author" href="{{ $element.link }}" title="{{ $element.name }}" target="_blank">{{ $element.name }}</a></address> &mdash;
+    {{ end }}
+  {{ end }}
+      <time pubdate datetime="{{ .Date.Format "2006-01-02" }}" title="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 02, 2006" }}</time>
+    </div>
+    <h1 class="title">{{ .Title }}</h1>
+    {{ with .Description }}<h4 class="subtitle">{{ . }}</h4>{{ end }}
+    <hr />
+  </div>
+</header>

@@ -9,9 +9,9 @@
       {{ else }}
         <p>{{ .Summary }}</p>
       {{ end }}
+      <div class="meta">
   {{ range $element := .Site.Params.authors }}
     {{ if eq $element.name $author }}
-      <div class="meta">
           Written By <a href="{{ $element.link }}"><address>{{ $element.name }}</address></a> &mdash;
       {{ end }}
     {{ end }}

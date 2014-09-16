@@ -26,19 +26,7 @@
          {{ end }}
        </ul>
     </div>
-    <footer class="container article-footer">
-      <hr />
-      {{ range $element := .Site.Params.authors }}
-        {{ if eq $element.name $author }}
-        <img class="avatar" src="{{ $element.image }}">
-        <address class="content">
-          <p><strong><a rel="author" href="{{ $element.link }}" title="{{ $element.name }}" target="_blank">{{ $element.name }}</a></strong><br>
-          <span class="muted">{{ $element.description }}</span>
-          </p>
-        {{ end }}
-      {{ end }}
-      </address>
-    </footer>
+    {{ partial "articlefooter.html" . }}
   </article>
 </div>
 {{ partial "footer.html" . }}
