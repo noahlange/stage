@@ -16,13 +16,13 @@ Stage comes pre-packaged with a number of content types:
 * Media (galleries of photos or videos)
 * Events
 
-## Multi-Artist Support
+## Multi-Author Support
 
-It took a night of swearing at the computer, but Stage now has multi-author (or artist) support. It's not perfect, but it'll do for now. An array of artists can be configured in config.yaml, which can then be referenced by *name*, not array key, (i.e., artist.stage.$name, not artists.$key ) in the 'artist' Paramater in content front matter. (It can be safely omitted on 'Artist' pages, where it instead uses the page Title as the artist name.)
+It took a night of swearing at the computer, but Stage now has multi-author/artist support. It's not perfect, but it'll do for now. An array of authors can be configured in config.yaml, which can then be referenced by *name*, not array key, (i.e., author.stage.$name, not authors.$key ) in the 'artist' Paramater in content front matter. (It can be safely omitted on 'Artist' pages, where it instead uses the page Title as the author name.)
 
-Hugo then dynamically generates each post's meta information from that in config.yaml.
+Hugo then dynamically generates each article's footer from the information stored in config.yaml.
 
-This allows Stage to serve as a site for multiple artists, or even for a label. This functionality has yet to be ported over to OffStage, because I have to go to work and it was quite a bit of work to get it functioning correctly.
+This allows Stage to serve as a site for multiple artists, or even for a label.
 
 # Presentation
 
@@ -107,8 +107,8 @@ params:
     reverbnation: "http://reverbnation.com/"
     contact: "/"
 
-  # Artist information
-  artists:
+  # Author information
+  authors:
     stage:
       name: "Stage"
       description: "Enter an artist description here."
