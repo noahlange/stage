@@ -17,7 +17,7 @@ params:
     contact: "/"
 
   # Artist information
-  artists:
+  authors:
     stage:
       name: "Stage"
       description: "Enter an artist description here."

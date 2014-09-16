@@ -18,7 +18,7 @@ Stage comes pre-packaged with a number of content types:
 
 ## Multi-Author Support
 
-It took a night of swearing at the computer, but Stage now has multi-author/artist support. It's not perfect, but it'll do for now. An array of authors can be configured in config.yaml, which can then be referenced by *name*, not array key, (i.e., author.stage.$name, not authors.$key ) in the 'author' Paramater in content front matter. (It can be safely omitted on 'Artist' pages, where it instead uses the page Title as the author name.)
+It took a night of swearing at the computer, but Stage now has multi-author/artist support. It's not perfect, but it'll do for now. An array of authors can be configured in config.yaml, which can then be referenced by *name*, not array key, (i.e., author.stage.$name, not authors.$key ) in the 'author' Parameter in content front matter. (It can be safely omitted on 'Artist' pages, where it instead uses the page Title as the author name.)
 
 Hugo then dynamically generates each article's footer from the information stored in config.yaml.
 
