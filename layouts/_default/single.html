@@ -17,7 +17,9 @@
     </section>
     {{ else }}
     <section id="article-content" class="container article-content">
-      {{ .Content }}
+      <div class="col-sm-12">
+        {{ .Content }}
+      </div>
     </section>
     {{ end }}
     {{ partial "articlefooter.html" . }}

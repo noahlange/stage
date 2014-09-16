@@ -14,7 +14,7 @@
         <hr />
     </header>
     <section class="container article-content">
-      <div class="article-sidebar col-sm-4">
+      <div class="article-sidebar col-sm-3">
           <ul class="sidebar-info">
           {{ if eq .Site.Params.maps "true" }}
             <li>
@@ -32,7 +32,7 @@
             <li class="text-muted"><time>{{ .Params.event.time }}</time></li>
           </ul>
       </div>
-      <div class="col-sm-8">
+      <div class="col-sm-9">
           {{ .Content }}
       </div>
     </section>

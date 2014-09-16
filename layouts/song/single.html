@@ -1,6 +1,6 @@
 {{ partial "head.html" . }}
 {{ partial "navbar.html" . }}
-{{ $artist := .Params.artist }}
+{{ $author := .Params.author }}
 <div class="wrapper">
   {{ with .Params.coverimage }}<div class="article-cover" data-stellar-background-ratio="0.25" style="background-image: url({{ . }})"></div>{{ end }}
   <article id="main-container" >
@@ -9,7 +9,7 @@
         <hr />
     </header>
     <section class="container article-content">
-      <div class="article-sidebar col-sm-4">
+      <div class="article-sidebar col-sm-3">
           <ul class="sidebar-info">
             {{ with .Params.album.image }}
             <li>
@@ -17,7 +17,7 @@
             </li>
             {{ end }}
             <li class="text-muted">from <a href="{{ .Params.album.link }}">{{ .Params.album.title }}</a></li>
-            {{ $element := .Site.Params.authors }}
+            {{ range $element := .Site.Params.authors }}
               {{ if eq $element.name $author }}
             <li class="text-muted">by <a href="{{ $element.link }}">{{ $element.name }}</a></li>
               {{ end }}
@@ -44,7 +44,7 @@
             {{ with .Params.purchase.amazon }}<li><a href="{{ . }}">a</a></li>{{ end }}
           </ul>
       </div>
-      <div class="col-sm-8">
+      <div class="col-sm-9">
           {{ .Content }}
       </div>
     </section>

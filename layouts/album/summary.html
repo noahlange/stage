@@ -12,7 +12,7 @@
           <div class="meta">
           {{ range $element := .Site.Params.authors }}
             {{ if eq $element.name $author }}
-            <p>Written By <a href="{{ $element.link }}"><address>{{ $element.name }}</address></a> &mdash;</p>
+            Written By <a href="{{ $element.link }}"><address>{{ $element.name }}</address></a> &mdash;
             {{ end }}
           {{ end }}
             <time pubdate datetime="{{ .Date.Format "2006-01-02" }}" title="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
