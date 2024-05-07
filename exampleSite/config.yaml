@@ -1,0 +1,47 @@
+---
+baseurl: "/"
+theme: "stage"
+metaDataFormat: "yaml"
+params:
+
+  # Website information
+  title: "Stage"
+  subtitle: "A Hugo theme for musicians and creative types."
+  coverimage: "/images/stage.jpg"
+
+  # Social information
+  social:
+    facebook: "http://facebook.com/"
+    soundcloud: "http://soundcloud.com/"
+    reverbnation: "http://reverbnation.com/"
+    contact: "/"
+
+  # Artist information
+  authors:
+    stage:
+      name: "Stage"
+      description: "Enter an artist description here."
+      image: "/images/avatar.png"
+      link: "/artists/stage"
+    artist-1:
+      name: "Artist 1"
+      description: "Enter an artist description here."
+      image: "/images/avatar.png"
+      link: "/artists/artist-1"
+    artist-2:
+      name: "Artist 2"
+      description: "Enter an artist description here."
+      image: "/images/avatar.png"
+      link: "/artists/artist-2"
+
+  # Navbar links
+  navbar:
+    blog: "/post/"
+    bio: "/artist/stage"
+    music: "/album/"
+    events: "/event/"
+    media: "/media/"
+
+  fonts: "Lato:300,500,700"
+  maps: "true"
+---
