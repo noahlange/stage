@@ -18,11 +18,21 @@
         {{ with .Site.Params.navbar.events }}<li><a href="{{ . }}">Events</a></li>{{ end }}
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        {{ if .Site.Params.social.facebook }}
         {{ with .Site.Params.social.facebook }}<li><a href="{{ . }}"><i class="fa fa-facebook"></i></a></li>{{ end }}
+        {{ end }}
+        {{ if .Site.Params.social.twitter }}
         {{ with .Site.Params.social.twitter }}<li><a href="{{ . }}"><i class="fa fa-twitter"></i></a></li>{{ end }}
+        {{ end }}
+        {{ if .Site.Params.social.soundcloud }}
         {{ with .Site.Params.social.soundcloud }}<li><a href="{{ . }}"><i class="fa fa-soundcloud"></i></a></li>{{ end }}
+        {{ end }}
+        {{ if .Site.Params.social.reverbnation }}
         {{ with .Site.Params.social.reverbnation }}<li><a href="{{ . }}"><i class="fa fa-star"></i></a></li>{{ end }}
+        {{ end }}
+        {{ if .Site.Params.social.contact }}
         {{ with .Site.Params.social.contact }}<li><a href=""><i class="fa fa-envelope"></i></a></li>{{ end }}
+        {{ end }}
       </ul>
     </div><!--/.nav-collapse -->
   </div>
