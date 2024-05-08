@@ -3544,6 +3544,7 @@ textarea.form-control {
 /* line 165, ../../../../../../.rvm/gems/ruby-2.1.2/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_forms.scss */
 input[type="search"] {
   -webkit-appearance: none;
+  appearance: none;
 }
 
 /* line 178, ../../../../../../.rvm/gems/ruby-2.1.2/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_forms.scss */
@@ -7014,6 +7015,7 @@ button.close {
   background: transparent;
   border: 0;
   -webkit-appearance: none;
+  appearance: none;
 }
 
 /* line 11, ../../../../../../.rvm/gems/ruby-2.1.2/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_modals.scss */
@@ -8081,18 +8083,58 @@ button.close {
   text-align: center;
 }
 
-/* line 16, ../sass/_cover-page.scss */
-.cover-title {
-  text-transform: uppercase;
-  font-weight: 300;
-  font-size: 128px;
-  margin-bottom: 0;
+@media screen and (min-width: 560px) {
+  /* line 16, ../sass/_cover-page.scss */
+  .cover-title {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 128px;
+    margin-bottom: 0;
+    text-shadow: 2px 2px 2px black;
+  }
+
+  /* line 23, ../sass/_cover-page.scss */
+  .cover-subtitle {
+    font-weight: 300;
+    margin-top: 0;
+    text-shadow: 1px 1px 1px black;
+  }
 }
 
-/* line 23, ../sass/_cover-page.scss */
-.cover-subtitle {
-  font-weight: 300;
-  margin-top: 0;
+@media screen and (min-width: 390px) and (max-width: 559px) {
+  /* line 16, ../sass/_cover-page.scss */
+  .cover-title {
+    text-transform: uppercase;
+    font-weight: 200;
+    font-size: 86px;
+    margin-bottom: 0;
+    text-shadow: 2px 2px 2px black;
+  }
+
+  /* line 23, ../sass/_cover-page.scss */
+  .cover-subtitle {
+    font-weight: 200;
+    margin-top: 0;
+    text-shadow: 1px 1px 1px black;
+  }
+}
+
+@media screen and (max-width: 389px) {
+  /* line 16, ../sass/_cover-page.scss */
+  .cover-title {
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: 45px;
+    margin-bottom: 0;
+    text-shadow: 2px 2px 2px black;
+  }
+
+  /* line 23, ../sass/_cover-page.scss */
+  .cover-subtitle {
+    font-weight: 100;
+    margin-top: 0;
+    text-shadow: 1px 1px 1px black;
+  }
 }
 
 /* line 1, ../sass/_article.scss */
@@ -8284,7 +8326,6 @@ article {
 
 /* line 56, ../sass/_leadsheet.scss */
 .repeat {
-  display: inline-block;
   float: right;
   font-style: italic;
 }
